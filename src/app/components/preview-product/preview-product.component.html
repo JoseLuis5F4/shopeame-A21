@@ -1,0 +1,8 @@
+<div class="flex-col justify-center align-center mr-20 ml-20 mt-20">
+  <h5>Preview del producto:</h5>
+  <img *ngIf="product" [src]="product.image" alt="Product Image" />
+  <h4 *ngIf="product">{{ product.name }}</h4>
+  <h2 *ngIf="product" class="font-bold">$ {{ product.price }}</h2>
+  <p *ngIf="product">{{ product.description }}</p>
+  <app-rating-star *ngIf="product" [rating]="product.stars"></app-rating-star>
+</div>

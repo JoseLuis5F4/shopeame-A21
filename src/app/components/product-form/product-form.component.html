@@ -1,0 +1,82 @@
+<div
+  class="flex flex-row content-arround bg-white w-auto mt-5 mr-20 ml-20 mb-10 shadow-lg rounded-lg"
+>
+  <div class="flex-1">
+    <div>
+      <h1 class="text-black font-bold text-3xl mt-5 ml-10 mb-20">
+        Creación/edición de productos
+      </h1>
+    </div>
+    <div class="ml-10">
+      <form
+        [formGroup]="productForm"
+        (ngSubmit)="onSubmit()"
+        class="container mx-auto py-4 ml-10"
+      >
+        <div class="flex flex-col gap-4">
+          <div>
+            <label class="block mb-2 font-medium">Nombre del producto:</label>
+            <input
+              type="text"
+              class="block w-3/4 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+              formControlName="name"
+              placeholder="Por ej: Tiesto para planta"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-2 font-medium">Precio: </label>
+            <input
+              type="text"
+              class="block w-3/4 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+              formControlName="price"
+              placeholder="Por ej: 9.50"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-2 font-medium">Descripción: </label>
+            <input
+              type="text"
+              class="block w-3/4 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+              formControlName="description"
+              placeholder="Por ej: Lo más vendido este mes"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-2 font-medium">Opiniones: </label>
+            <input
+              type="text"
+              class="block w-3/4 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+              formControlName="stars"
+              placeholder="Por ej: 4.80"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-2 font-medium">Imagen</label>
+            <input
+              type="file"
+              class="block w-3/4 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+              (change)="onChange($event)"
+              #inputFile
+            />
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-10">
+          <button
+            type="submit"
+            class="ml-auto px-10 py-2 bg-orange-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-indigo-600"
+            [disabled]="!productForm.valid"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="w-1 bg-orange-200 rounded-lg ml-20 mt-20 mb-20 mr-10"></div>
+  <app-preview-product></app-preview-product>
+</div>

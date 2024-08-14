@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Paleta de Colores
+$primary-light: #f8f4e1; // Light Cream - Utilizado para fondos y áreas amplias
+$primary: #af8f6f; // Warm Beige - Para botones principales, enlaces y acentos
+$secondary: #74512d; // Rich Brown - Para encabezados, textos importantes y bordes
+$accent: #543310; // Dark Chocolate - Para detalles, iconos y elementos destacados
+
+// Tipografía
+$font-family: "Poppins", Arial, sans-serif;
+
+// General SCSS
+body {
+  font-family: $font-family;
+  background-color: $primary-light;
+  color: $secondary;
+}
+
+header {
+  background-color: $primary;
+  color: $primary-light;
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $secondary;
+}
+
+a {
+  color: $primary;
+  &:hover {
+    color: $accent;
+  }
+}
+
+button {
+  background-color: $primary;
+  color: $primary-light;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: $secondary;
+    color: $primary-light;
+  }
+}
+
+.footer {
+  background-color: $accent;
+  color: $primary-light;
+  padding: 1rem;
+  text-align: center;
+}
